@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:19.10
 
 # No interactive frontend during docker build
 ENV DEBIAN_FRONTEND=noninteractive \
@@ -16,6 +16,7 @@ RUN apt-get -qqy update \
     gdebi \
     git \
     gstreamer1.0-plugins-bad \
+    gstreamer1.0-gl \
     libosmesa6-dev \
     libvirt-daemon-system \
     libvirt-clients \
