@@ -63,6 +63,8 @@ test(testCase => {
 }, 'nativeIO.renameSync allows renaming an open file.');
 
 test(testCase => {
+  // Without this assertion, the test passes even if renameSync is not defined.
+  assert_implements(nativeIO.renameSync, "nativeIO.renameSync is not implemented.");
   testCase.add_cleanup(() => {
     file.close();
     nativeIO.deleteSync('test_file');
